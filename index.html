@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayariz & Jean — Nuestra Boda</title>
+    
+    <!-- SEO & METADATOS DE COMPARTIDO (Optimizado para WhatsApp, Facebook y Telegram) -->
+    <meta name="description" content="Dos almas, un mismo camino, una sola promesa ante Dios. Acompáñanos a celebrar nuestra boda el 18 de Diciembre de 2026 en Morelia, Michoacán.">
+    <meta name="author" content="Nayariz & Jean">
+    
+    <!-- Open Graph (WhatsApp & Redes Sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="¡Nos casamos! Nayariz & Jean">
+    <meta property="og:description" content="Te invitamos a celebrar nuestra unión el 18 de Diciembre de 2026. Encuentra aquí horarios, ubicaciones y confirma tu asistencia.">
+    <meta property="og:image" content="https://i.imgur.com/fc17Jeo.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Pinyon Script, y Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        weddingGold: '#D4AF37',
+                        weddingDark: '#0B1E36', // Azul de medianoche real
+                        weddingLight: '#F4F7FA', // Fondo limpio con matiz frío
+                        weddingTaupe: '#6A7B95', // Azul pizarra para textos secundarios
+                        weddingSand: '#E8EDF3' // Gris azulado suave
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        script: ['Pinyon Script', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Efecto de revelado gradual al hacer scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Personalización de barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F7FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 3px;
+        }
+        
+        /* Efecto interactivo de imágenes en la galería */
+        .gallery-img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-container:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* Textura para fondos oscuros con máscara azul marino */
+        .bg-dark-textured {
+            background-color: #0B1E36;
+            background-image: linear-gradient(rgba(11, 30, 54, 0.93), rgba(11, 30, 54, 0.97)), url('https://i.imgur.com/JcQOuzH.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-blend-mode: luminosity; /* Unifica el fondo verde en un tono azul marino profundo */
+        }
+
+        /* Animaciones */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 18px rgba(212, 175, 55, 0.65); }
+        }
+        .pulse-gold {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(11, 30, 54, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-weddingLight text-weddingDark font-sans selection:bg-weddingGold selection:text-white overflow-x-hidden">
+
+    <!-- PRELOADER (Evita saltos visuales incómodos durante la descarga de tipografías y estilos en GitHub) -->
+    <div id="preloader" class="fixed inset-0 bg-weddingDark z-50 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
+        <div class="text-center animate-float">
+            <h1 class="font-script text-6xl text-weddingGold">Nayariz & Jean</h1>
+            <p class="font-serif text-weddingLight/60 tracking-[0.3em] text-[10px] uppercase mt-2">Cargando Invitación</p>
+            <div class="w-12 h-[1px] bg-weddingGold/40 mx-auto mt-4 overflow-hidden">
+                <div class="w-full h-full bg-weddingGold origin-left animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTADA / HERO -->
+    <section class="relative min-h-screen flex flex-col justify-between items-center bg-cover bg-center px-4 py-12 text-center" style="background-image: linear-gradient(rgba(11, 30, 54, 0.35), rgba(11, 30, 54, 0.85)), url('https://i.imgur.com/fc17Jeo.jpg');">
+        
+        <div class="mt-8">
+            <p class="text-xs uppercase tracking-[0.35em] text-weddingGold font-semibold">Nuestra Unión</p>
+            <div class="w-16 h-[1px] bg-weddingGold mx-auto mt-2"></div>
+        </div>
+
+        <div class="my-auto max-w-4xl px-4">
+            <h1 class="font-script text-7xl md:text-9xl text-weddingGold leading-none mb-4 drop-shadow-md animate-float">Nayariz & Jean</h1>
+            <div class="my-6 inline-block border-y border-weddingGold/40 py-2 px-8">
+                <p class="font-serif text-xl md:text-3xl tracking-[0.2em] text-weddingLight font-light">18 • DICIEMBRE • 2026</p>
+            </div>
+            <p class="font-serif italic text-lg md:text-2xl text-white max-w-xl mx-auto mt-6 leading-relaxed">
+                "Dos almas, un mismo camino, una sola promesa ante Dios."
+            </p>
+        </div>
+
+        <div class="mb-6 animate-bounce cursor-pointer" onclick="document.getElementById('corte-honor').scrollIntoView();">
+            <p class="text-[9px] uppercase tracking-[0.4em] text-white/80 mb-2">Desliza para ver la invitación</p>
+            <i class="fa-solid fa-chevron-down text-weddingGold text-lg"></i>
+        </div>
+    </section>
+
+    <!-- CORTE DE HONOR -->
+    <section id="corte-honor" class="bg-dark-textured text-weddingLight py-24 px-4 border-b border-weddingGold/10 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="text-xs uppercase tracking-[0.3em] text-weddingGold font-semibold">Con la bendición de</span>
+            <h2 class="font-serif text-4xl md:text-5xl mt-2 mb-16 text-weddingLight font-light">Nuestra Familia</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Padres de la Novia -->
+                <div class="fade-in bg-white/5 border border-weddingGold/20 p-8 rounded-xl backdrop-blur-sm hover-lift">
+                    <p class="text-[10px] uppercase tracking-[0.25em] text-weddingGold mb-4 font-semibold">Padres de la Novia</p>
+                    <p class="font-serif text-2xl text-weddingLight mb-1 font-light">Jorge Medina Huizar</p>
+                    <p class="font-serif text-2xl text-weddingLight font-light">Arismel Aguirre Sierra</p>
+                </div>
+                
+                <!-- Padres del Novio -->
+                <div class="fade-in bg-white/5 border border-weddingGold/20 p-8 rounded-xl backdrop-blur-sm hover-lift">
+                    <p class="text-[10px] uppercase tracking-[0.25em] text-weddingGold mb-4 font-semibold">Padres del Novio</p>
+                    <p class="font-serif text-2xl text-weddingLight mb-1 font-light">Juvenal Báez Martínez</p>
+                    <p class="font-serif text-2xl text-weddingLight font-light">Sara Sánchez Pillardo</p>
+                </div>
+            </div>
+
+            <!-- Padrinos -->
+            <div class="border-t border-weddingGold/25 pt-16 fade-in">
+                <p class="text-xs uppercase tracking-[0.25em] text-weddingGold mb-6 font-semibold">Nuestros Padrinos</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12">
+                    <div class="group">
+                        <p class="font-serif text-2xl md:text-3xl text-weddingLight italic font-light group-hover:text-weddingGold transition-colors duration-300">Adrián Romero Villanueva</p>
+                    </div>
+                    <span class="text-weddingGold font-serif text-xl italic font-light">&</span>
+                    <div class="group">
+                        <p class="font-serif text-2xl md:text-3xl text-weddingLight italic font-light group-hover:text-weddingGold transition-colors duration-300">Karen Yunuen Álvarez Prieto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIENVENIDA -->
+    <section class="py-24 px-6 text-center max-w-4xl mx-auto fade-in">
+        <span class="text-weddingGold text-2xl block"><i class="fa-solid fa-hands-praying"></i></span>
+        <h2 class="font-serif text-3xl md:text-4xl italic mt-4 mb-6 text-weddingDark">Bendecidos por el amor</h2>
+        <p class="text-sm md:text-base text-weddingTaupe leading-relaxed tracking-widest max-w-2xl mx-auto font-light">
+            Bendecidos por el amor y guiados por la fe, queremos celebrarlo contigo. Te invitamos a ser testigo de este hermoso comienzo y de la promesa de amor eterno que compartiremos.
+        </p>
+        <div class="w-24 h-[1px] bg-weddingGold/30 mx-auto mt-8"></div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="bg-dark-textured text-weddingLight py-20 px-4 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h3 class="font-serif text-2xl md:text-3xl tracking-[0.15em] text-weddingGold uppercase mb-2">El Gran Día</h3>
+            <p class="font-serif italic text-weddingLight/80 text-lg mb-8">Viernes, 18 de Diciembre de 2026</p>
+            
+            <div class="flex justify-center gap-3 md:gap-6 max-w-lg mx-auto mb-12">
+                <div class="bg-white/5 border border-weddingGold/30 rounded-xl p-4 min-w-[75px] md:min-w-[100px] backdrop-blur-md shadow-lg transform hover:scale-105 transition duration-300">
+                    <span id="days" class="block font-serif text-3xl md:text-5xl text-weddingGold">00</span>
+                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-weddingLight/60">Días</span>
+                </div>
+                <div class="bg-white/5 border border-weddingGold/30 rounded-xl p-4 min-w-[75px] md:min-w-[100px] backdrop-blur-md shadow-lg transform hover:scale-105 transition duration-300">
+                    <span id="hours" class="block font-serif text-3xl md:text-5xl text-weddingGold">00</span>
+                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-weddingLight/60">Horas</span>
+                </div>
+                <div class="bg-white/5 border border-weddingGold/30 rounded-xl p-4 min-w-[75px] md:min-w-[100px] backdrop-blur-md shadow-lg transform hover:scale-105 transition duration-300">
+                    <span id="minutes" class="block font-serif text-3xl md:text-5xl text-weddingGold">00</span>
+                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-weddingLight/60">Minutos</span>
+                </div>
+                <div class="bg-white/5 border border-weddingGold/30 rounded-xl p-4 min-w-[75px] md:min-w-[100px] backdrop-blur-md shadow-lg transform hover:scale-105 transition duration-300">
+                    <span id="seconds" class="block font-serif text-3xl md:text-5xl text-weddingGold">00</span>
+                    <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-weddingLight/60">Segundos</span>
+                </div>
+            </div>
+
+            <!-- BOTONES DE CALENDARIO -->
+            <div class="fade-in">
+                <p class="text-xs uppercase tracking-widest text-weddingLight/70 mb-4">¿Deseas agendar el gran día en tu calendario?</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <!-- Google Calendar -->
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Nayariz+%26+Jean&dates=20261218T224000Z%2F20261219T080000Z&details=¡Acompáñanos+a+celebrar+nuestra+boda!%0A%0A4%3A40+PM+-+Ceremonia+Religiosa+en+la+Catedral+de+Morelia.%0A7%3A00+PM+-+Recepción+en+Salón+Vía+Romería.&location=Catedral+de+Morelia%2C+Morelia%2C+Michoacán%2C+México" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="w-56 inline-flex justify-center items-center gap-2 bg-weddingGold text-weddingDark font-bold text-xs uppercase tracking-widest py-3 px-6 rounded-full hover:bg-weddingLight hover:text-weddingDark transition-all duration-500 shadow-md transform hover:-translate-y-1 pulse-gold">
+                        <i class="fa-brands fa-google text-sm"></i> Google Calendar
+                    </a>
+                    
+                    <!-- Apple Calendar / iOS -->
+                    <button onclick="downloadICS()" 
+                            class="w-56 inline-flex justify-center items-center gap-2 bg-transparent border border-weddingGold text-weddingGold font-bold text-xs uppercase tracking-widest py-3 px-6 rounded-full hover:bg-weddingGold hover:text-weddingDark transition-all duration-500 shadow-md transform hover:-translate-y-1">
+                        <i class="fa-brands fa-apple text-sm"></i> Apple / iOS Calendar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIONES -->
+    <section class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-xs uppercase tracking-[0.3em] text-weddingTaupe">¿Cuándo y Dónde?</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-weddingDark mt-2 font-light">Ubicaciones y Horarios</h2>
+            <p class="font-serif italic text-weddingGold text-2xl mt-2">18 • Diciembre • 2026</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Ceremonia Religiosa -->
+            <div class="bg-white rounded-2xl shadow-xl shadow-weddingDark/5 border border-weddingGold/10 p-8 md:p-12 text-center flex flex-col justify-between hover-lift transition duration-500 fade-in">
+                <div>
+                    <div class="text-weddingGold text-3xl mb-4"><i class="fa-solid fa-church"></i></div>
+                    <h3 class="font-serif text-2xl uppercase tracking-wider mb-2 text-weddingDark">Ceremonia Religiosa</h3>
+                    <div class="w-12 h-[1px] bg-weddingGold mx-auto my-4"></div>
+                    <p class="font-serif text-xl font-semibold text-weddingDark mb-1">Catedral de Morelia</p>
+                    <p class="text-sm text-weddingTaupe mb-6 leading-relaxed">Av. Francisco I. Madero Pte S/N, Centro Histórico, Morelia, Mich.</p>
+                    
+                    <div class="bg-weddingSand py-3 px-6 rounded-full inline-block mb-6">
+                        <span class="text-sm font-semibold text-weddingDark tracking-widest"><i class="fa-regular fa-clock mr-2 text-weddingGold"></i>4:40 PM</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://maps.app.goo.gl/3GPEmEQoYT4fThQ38?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-weddingDark text-weddingLight px-6 py-3 rounded-full hover:bg-weddingGold hover:text-weddingDark transition-all duration-300 font-semibold text-xs uppercase tracking-widest shadow-md">
+                        <i class="fa-solid fa-location-dot"></i> Ver Mapa en GPS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recepción -->
+            <div class="bg-white rounded-2xl shadow-xl shadow-weddingDark/5 border border-weddingGold/10 p-8 md:p-12 text-center flex flex-col justify-between hover-lift transition duration-500 fade-in">
+                <div>
+                    <div class="text-weddingGold text-3xl mb-4"><i class="fa-solid fa-champagne-glasses"></i></div>
+                    <h3 class="font-serif text-2xl uppercase tracking-wider mb-2 text-weddingDark">La Recepción</h3>
+                    <div class="w-12 h-[1px] bg-weddingGold mx-auto my-4"></div>
+                    <p class="font-serif text-xl font-semibold text-weddingDark mb-1">Salón Vía Romería</p>
+                    <p class="text-sm text-weddingTaupe mb-6 leading-relaxed font-light">Morelia, Michoacán</p>
+                    
+                    <div class="bg-weddingSand py-3 px-6 rounded-full inline-block mb-6">
+                        <span class="text-sm font-semibold text-weddingDark tracking-widest"><i class="fa-regular fa-clock mr-2 text-weddingGold"></i>7:00 PM</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://maps.app.goo.gl/dn4HE4vT6z31KRk59?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-weddingDark text-weddingLight px-6 py-3 rounded-full hover:bg-weddingGold hover:text-weddingDark transition-all duration-300 font-semibold text-xs uppercase tracking-widest shadow-md">
+                        <i class="fa-solid fa-location-dot"></i> Ver Mapa en GPS
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERÍA (Optimizada con Lazy Loading) -->
+    <section class="py-20 bg-weddingSand/30 border-t border-b border-weddingGold/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-weddingDark mt-2 font-light">Galería</h2>
+                <div class="w-16 h-[1px] bg-weddingGold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div onclick="openLightbox('https://i.imgur.com/PmstHhu.jpg', 'Un mismo camino...')" class="gallery-container group relative overflow-hidden rounded-xl shadow-lg aspect-[3/4] cursor-pointer bg-weddingDark/10 transition-transform duration-500 hover:scale-[1.02]">
+                    <img src="https://i.imgur.com/PmstHhu.jpg" alt="Nayariz & Jean - Momentos" loading="lazy" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-weddingDark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-white font-serif italic text-lg tracking-wider">Un mismo camino...</p>
+                    </div>
+                </div>
+                <!-- Foto 2 (Portada de la galería - Carga rápida para no retrasar interactividad) -->
+                <div onclick="openLightbox('https://i.imgur.com/fc17Jeo.jpg', 'Dos almas unidas por el amor...')" class="gallery-container group relative overflow-hidden rounded-xl shadow-lg aspect-[3/4] cursor-pointer bg-weddingDark/10 transition-transform duration-500 hover:scale-[1.02]">
+                    <img src="https://i.imgur.com/fc17Jeo.jpg" alt="Nayariz & Jean - Portada" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-weddingDark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-white font-serif italic text-lg tracking-wider">Dos almas unidas por el amor...</p>
+                    </div>
+                </div>
+                <!-- Foto 3 -->
+                <div onclick="openLightbox('https://i.imgur.com/So8Mgee.jpg', 'Una promesa ante Dios...')" class="gallery-container group relative overflow-hidden rounded-xl shadow-lg aspect-[3/4] cursor-pointer bg-weddingDark/10 transition-transform duration-500 hover:scale-[1.02]">
+                    <img src="https://i.imgur.com/So8Mgee.jpg" alt="Nayariz & Jean - Ceremonia" loading="lazy" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-weddingDark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-white font-serif italic text-lg tracking-wider">Una promesa ante Dios...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Foto de transición estilo cinta horizontal -->
+            <div class="mt-8">
+                <div onclick="openLightbox('https://i.imgur.com/f1EAPiv.jpg', 'Contando los días para celebrar')" class="gallery-container group relative overflow-hidden rounded-xl shadow-lg max-h-[350px] aspect-[21/9] cursor-pointer bg-weddingDark/10 transition-transform duration-500 hover:scale-[1.01]">
+                    <img src="https://i.imgur.com/f1EAPiv.jpg" alt="Nayariz & Jean - Panorámica" loading="lazy" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-weddingDark/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-white font-serif italic text-lg tracking-widest">Contando los días para celebrar con ustedes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLES ADICIONALES -->
+    <section class="py-24 px-4 max-w-5xl mx-auto text-center">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Código de Vestimenta -->
+            <div class="border border-weddingGold/20 rounded-2xl p-8 md:p-12 bg-white shadow-md hover-lift transition duration-500 fade-in">
+                <div class="text-weddingGold text-3xl mb-4"><i class="fa-solid fa-user-tie"></i></div>
+                <h3 class="font-serif text-2xl mb-2 text-weddingDark font-semibold">Código de Vestimenta</h3>
+                <p class="text-[10px] uppercase tracking-[0.25em] text-weddingGold font-bold mb-4">Formal</p>
+                <p class="text-sm text-weddingTaupe leading-relaxed max-w-sm mx-auto font-light">
+                    Agradecemos que asistas vistiendo traje formal para dar un toque de elegancia y armonía a este día tan esperado.
+                </p>
+            </div>
+
+            <!-- Reservado de Adultos -->
+            <div class="border border-weddingGold/20 rounded-2xl p-8 md:p-12 bg-white shadow-md hover-lift transition duration-500 fade-in">
+                <div class="text-weddingGold text-3xl mb-4"><i class="fa-solid fa-child-reaching"></i></div>
+                <h3 class="font-serif text-2xl mb-2 text-weddingDark font-semibold">Celebración de Adultos</h3>
+                <p class="text-[10px] uppercase tracking-[0.25em] text-weddingGold font-bold mb-4">Solo Adultos</p>
+                <p class="text-sm text-weddingTaupe leading-relaxed max-w-sm mx-auto font-light">
+                    Aunque nos encantan y amamos a los niños, este día estará diseñado exclusivamente para adultos.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MESA DE REGALOS / REGALOS -->
+    <section class="bg-weddingSand/30 border-t border-b border-weddingGold/15 py-24 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-weddingGold text-3xl mb-4"><i class="fa-solid fa-gift animate-float"></i></div>
+            <h2 class="font-serif text-4xl mb-4 text-weddingDark font-light">Mesa de Regalos</h2>
+            <p class="font-serif italic text-weddingTaupe text-lg mb-10 max-w-xl mx-auto">
+                "Recuerda que lo importante es que vengas con ilusión y alegría. Si quieres hacernos un regalo, estamos muy agradecidos."
+            </p>
+
+            <!-- Tarjeta Bancaria -->
+            <div class="bg-white rounded-2xl p-6 md:p-10 border border-weddingGold/20 shadow-xl max-w-md mx-auto mb-10 text-left relative overflow-hidden fade-in hover-lift duration-500">
+                <div class="absolute top-0 right-0 bg-weddingGold/10 text-weddingGold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-bl-lg font-bold">
+                    BBVA
+                </div>
+                <p class="text-[9px] uppercase tracking-widest text-weddingTaupe mb-1 font-bold">Titular</p>
+                <p class="font-serif text-xl text-weddingDark mb-6 font-semibold">Nayariz Yunuen Medina Aguirre</p>
+                
+                <!-- CLABE -->
+                <div class="mb-6">
+                    <p class="text-[9px] uppercase tracking-widest text-weddingTaupe mb-1.5 font-bold">Cuenta CLABE</p>
+                    <div class="flex justify-between items-center bg-weddingLight p-3.5 rounded-xl border border-weddingGold/15 transition-all hover:border-weddingGold/50">
+                        <span id="clabe" class="font-mono text-xs md:text-sm tracking-wider text-weddingDark font-semibold">012180015003172485</span>
+                        <button onclick="copyToClipboard('clabe', 'btn-clabe')" id="btn-clabe" class="text-weddingGold hover:text-weddingDark transition text-xs flex items-center gap-1 font-bold tracking-widest uppercase">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TARJETA -->
+                <div>
+                    <p class="text-[9px] uppercase tracking-widest text-weddingTaupe mb-1.5 font-bold">Número de Tarjeta</p>
+                    <div class="flex justify-between items-center bg-weddingLight p-3.5 rounded-xl border border-weddingGold/15 transition-all hover:border-weddingGold/50">
+                        <span id="tarjeta" class="font-mono text-xs md:text-sm tracking-wider text-weddingDark font-semibold">4152314462303564</span>
+                        <button onclick="copyToClipboard('tarjeta', 'btn-tarjeta')" id="btn-tarjeta" class="text-weddingGold hover:text-weddingDark transition text-xs flex items-center gap-1 font-bold tracking-widest uppercase">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caja de sobres -->
+            <div class="inline-flex items-center gap-4 bg-weddingDark text-weddingLight py-4 px-6 rounded-2xl max-w-md mx-auto shadow-lg fade-in transition-transform hover:scale-105 duration-300">
+                <i class="fa-solid fa-envelope text-weddingGold text-2xl"></i>
+                <p class="text-xs text-left tracking-wide leading-relaxed font-light">También durante la recepción habrá una cajita para sobres en el salón.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP / CONFIRMACIÓN -->
+    <section class="bg-dark-textured text-weddingLight py-24 px-4 text-center relative overflow-hidden">
+        <div class="relative max-w-xl mx-auto z-10">
+            <span class="text-xs uppercase tracking-[0.3em] text-weddingGold font-semibold">Confirmación de Asistencia</span>
+            <h2 class="font-serif text-4xl md:text-5xl mt-2 mb-4 text-weddingLight font-light">¿Nos Acompañas?</h2>
+            <p class="text-sm text-weddingLight/80 leading-relaxed mb-8 max-w-md mx-auto font-light">
+                Para nosotros es inmensamente valioso contar con tu presencia. Agradecemos confirmes tu asistencia antes de la fecha límite señalada.
+            </p>
+            
+            <div class="bg-white/5 border border-weddingGold/30 py-4 px-8 rounded-full inline-block mb-12 backdrop-blur-sm shadow-md transition-all hover:border-weddingGold/70 hover:scale-105">
+                <p class="text-[9px] uppercase tracking-[0.25em] text-weddingLight/70 mb-1">Fecha límite de confirmación</p>
+                <p class="font-serif text-xl text-weddingGold font-bold">18 • Noviembre • 2026</p>
+            </div>
+
+            <div>
+                <a href="https://wa.me/524431391243?text=Hola!%20Queremos%20confirmar%20nuestra%20asistencia%20para%20la%20boda%20de%20Nayariz%20y%20Jean%20el%20pr%C3%B3ximo%2018%20de%20diciembre.%20Nombre(s):" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-weddingGold text-weddingDark px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest shadow-2xl hover:bg-weddingLight hover:text-weddingDark transition-all duration-500 transform hover:-translate-y-1 pulse-gold">
+                    <i class="fa-brands fa-whatsapp text-lg animate-pulse"></i> Confirmar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-textured border-t border-weddingGold/10 py-16 px-4 text-center">
+        <p class="font-script text-5xl text-weddingGold mb-4 animate-float">Nayariz & Jean</p>
+        <p class="text-[10px] uppercase tracking-widest text-weddingLight/45">&copy; 18.12.2026 — Diseñado con Amor.</p>
+    </footer>
+
+    <!-- LIGHTBOX OVERLAY / VISUALIZADOR -->
+    <div id="lightbox" class="fixed inset-0 bg-weddingDark/95 backdrop-blur-md z-50 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/80 hover:text-weddingGold text-3xl transition" aria-label="Cerrar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-[90%] max-h-[80vh] flex justify-center items-center">
+            <img id="lightbox-img" src="" alt="Ampliada" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-weddingGold/20">
+        </div>
+        <p id="lightbox-caption" class="font-serif italic text-weddingGold mt-4 text-lg md:text-xl tracking-wider"></p>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- QUITAR PRELOADER ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => preloader.remove(), 700);
+        });
+
+        // --- CUENTA REGRESIVA ---
+        const targetDate = new Date('December 18, 2026 16:40:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // --- GENERADOR DE EVENTOS DE APPLE CALENDAR (.ICS) ---
+        function downloadICS() {
+            const icsContent = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//Nayariz y Jean//Invitacion Boda//ES",
+                "BEGIN:VEVENT",
+                "UID:boda-nayariz-jean-2026-dec18",
+                "DTSTAMP:20260603T120000Z",
+                "DTSTART:20261218T224000Z", // UTC compatible con 4:40 PM CST de México
+                "DTEND:20261219T080000Z",   // Estimación hasta las 2:00 AM CST
+                "SUMMARY:Boda de Nayariz & Jean",
+                "DESCRIPTION:¡Acompáñanos a celebrar nuestra boda!\\n\\n4:40 PM - Ceremonia Religiosa en la Catedral de Morelia.\\n7:00 PM - Recepción en Salón Vía Romería.",
+                "LOCATION:Catedral de Morelia, Morelia, Michoacán, México",
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\r\n");
+
+            const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "boda_nayariz_y_jean.ics";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // --- ACCIÓN DE COPIADO EN PORTAPAPELES ---
+        function copyToClipboard(elementId, btnId) {
+            const textToCopy = document.getElementById(elementId).innerText.replace(/\s+/g, '');
+            
+            const inputTemp = document.createElement("input");
+            inputTemp.value = textToCopy;
+            document.body.appendChild(inputTemp);
+            inputTemp.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                const btn = document.getElementById(btnId);
+                const originalHtml = btn.innerHTML;
+                
+                if (successful) {
+                    btn.innerHTML = `<i class="fa-solid fa-check text-emerald-500"></i> ¡Copiado!`;
+                    btn.classList.add('text-emerald-500');
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalHtml;
+                        btn.classList.remove('text-emerald-500');
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('No se pudo copiar el texto', err);
+            }
+            
+            document.body.removeChild(inputTemp);
+        }
+
+        // --- VISUALIZADOR DE GALERÍA (LIGHTBOX) ---
+        function openLightbox(imageUrl, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            
+            img.src = imageUrl;
+            cap.innerText = caption;
+            
+            lightbox.classList.remove('pointer-events-none');
+            lightbox.classList.add('opacity-100');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('pointer-events-none');
+            lightbox.classList.remove('opacity-100');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Atajos de salida del visualizador
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        document.getElementById('lightbox').addEventListener('click', function(event) {
+            if (event.target === this || event.target.id === 'lightbox-img') {
+                closeLightbox();
+            }
+        });
+
+        // --- EFECTO FADE-IN AL HACER SCROLL (Observer de intersección) ---
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
