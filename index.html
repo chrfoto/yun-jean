@@ -68,9 +68,9 @@
             padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
         }
 
-        /* Textura orgánica de papel para fondo claro */
+        /* Textura orgánica de papel para fondo claro - Ajustada la opacidad de 0.94 a 0.85 para hacerla más visible */
         .bg-paper-texture {
-            background-image: linear-gradient(rgba(250, 248, 245, 0.94), rgba(250, 248, 245, 0.94)), url('https://i.imgur.com/6lATQRo.jpg');
+            background-image: linear-gradient(rgba(250, 248, 245, 0.85), rgba(250, 248, 245, 0.85)), url('https://i.imgur.com/6lATQRo.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -83,8 +83,9 @@
             }
         }
 
+        /* Textura de papel para las tarjetas - Ajustada la opacidad de 0.96 a 0.88 para hacerla más visible */
         .bg-paper-texture-card {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), url('https://i.imgur.com/6lATQRo.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('https://i.imgur.com/6lATQRo.jpg');
             background-size: cover;
         }
 
@@ -888,6 +889,7 @@
             document.body.removeChild(textArea);
         }
 
+        // Animation success
         function animateCopySuccess(btnId) {
             const btn = document.getElementById(btnId);
             const originalHtml = btn.innerHTML;
